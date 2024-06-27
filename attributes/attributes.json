@@ -1,14 +1,13 @@
 {
     "attributes": [
         {
-            "name": "fps",
+            "name": "fpppps",
             "position": 0,
             "scope": [
                 "project",
                 "folder",
                 "version",
-                "representation",
-                "task"
+                "representation"
             ],
             "builtin": true,
             "data": {
