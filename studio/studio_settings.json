@@ -1,16 +1,1701 @@
 {
-    "equalizer": {
+    "ayon_third_party": {
+        "ffmpeg": {
+            "use_downloaded": false,
+            "custom_roots": {
+                "windows": [],
+                "linux": [],
+                "darwin": []
+            },
+            "custom_args": {
+                "ffmpeg": [],
+                "ffprobe": []
+            }
+        },
+        "oiio": {
+            "use_downloaded": true,
+            "custom_roots": {
+                "windows": [],
+                "linux": [],
+                "darwin": []
+            },
+            "custom_args": {
+                "oiiotool": [],
+                "maketx": [],
+                "iv": [],
+                "iinfo": [],
+                "igrep": [],
+                "idiff": [],
+                "iconvert": []
+            }
+        }
+    },
+    "aftereffects": {
+        "imageio": {
+            "activate_host_color_management": true,
+            "ocio_config": {
+                "override_global_config": false,
+                "filepath": []
+            },
+            "file_rules": {
+                "activate_host_rules": false,
+                "rules": []
+            }
+        },
         "create": {
-            "CreateMatchMove": {
-                "enabled": false,
-                "default_variants": [
-                    "CameraTrack",
-                    "ObjectTrack",
-                    "PointTrack",
-                    "Stabilize",
-                    "SurveyTrack",
-                    "UserTrack"
+            "RenderCreator": {
+                "mark_for_review": true,
+                "default_variants": [],
+                "force_setting_values": true
+            }
+        },
+        "publish": {
+            "CollectReview": {
+                "enabled": true
+            },
+            "ValidateSceneSettings": {
+                "enabled": true,
+                "optional": false,
+                "active": true,
+                "skip_resolution_check": [],
+                "skip_timelines_check": []
+            },
+            "ValidateContainers": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            }
+        },
+        "workfile_builder": {
+            "create_first_version": false,
+            "custom_templates": []
+        },
+        "templated_workfile_build": {
+            "profiles": []
+        }
+    },
+    "applications": {
+        "applications": {
+            "maya": {
+                "enabled": true,
+                "label": "Maya",
+                "host_name": "maya",
+                "icon": "{}/app_icons/maya.png",
+                "environment": "{\n  \"MAYA_DISABLE_CLIC_IPM\": \"Yes\",\n  \"MAYA_DISABLE_CIP\": \"Yes\",\n  \"MAYA_DISABLE_CER\": \"Yes\",\n  \"PYMEL_SKIP_MEL_INIT\": \"Yes\",\n  \"LC_ALL\": \"C\"\n}\n",
+                "variants": [
+                    {
+                        "name": "2025",
+                        "label": "2025",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Autodesk\\Maya2025\\bin\\maya.exe"
+                            ],
+                            "linux": [
+                                "/usr/autodesk/maya2025/bin/maya"
+                            ],
+                            "darwin": [
+                                "/Applications/Autodesk/maya2025/Maya.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{\n  \"MAYA_VERSION\": \"2025\"\n}",
+                        "use_python_2": false
+                    },
+                    {
+                        "name": "2024",
+                        "label": "2024",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Autodesk\\Maya2024\\bin\\maya.exe"
+                            ],
+                            "linux": [
+                                "/usr/autodesk/maya2024/bin/maya"
+                            ],
+                            "darwin": [
+                                "/Applications/Autodesk/maya2024/Maya.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{\n  \"MAYA_VERSION\": \"2024\"\n}",
+                        "use_python_2": false
+                    },
+                    {
+                        "name": "2023",
+                        "label": "2023",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Autodesk\\Maya2023\\bin\\maya.exe"
+                            ],
+                            "linux": [
+                                "/usr/autodesk/maya2023/bin/maya"
+                            ],
+                            "darwin": [
+                                "/Applications/Autodesk/maya2023/Maya.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{\n  \"MAYA_VERSION\": \"2023\"\n}",
+                        "use_python_2": false
+                    },
+                    {
+                        "name": "2022",
+                        "label": "2022",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Autodesk\\Maya2022\\bin\\maya.exe"
+                            ],
+                            "linux": [
+                                "/usr/autodesk/maya2022/bin/maya"
+                            ],
+                            "darwin": [
+                                "/Applications/Autodesk/maya2022/Maya.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{\n  \"MAYA_VERSION\": \"2022\"\n}",
+                        "use_python_2": true
+                    }
                 ]
+            },
+            "adsk_3dsmax": {
+                "enabled": true,
+                "label": "3ds Max",
+                "host_name": "max",
+                "icon": "{}/app_icons/3dsmax.png",
+                "environment": "{\n    \"ADSK_3DSMAX_STARTUPSCRIPTS_ADDON_DIR\": \"{OPENPYPE_ROOT}/openpype/hosts/max/startup\"\n}",
+                "variants": [
+                    {
+                        "name": "2024",
+                        "label": "",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Autodesk\\3ds Max 2024\\3dsmax.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{\n    \"3DSMAX_VERSION\": \"2024\"\n}",
+                        "use_python_2": false
+                    },
+                    {
+                        "name": "2023",
+                        "label": "",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Autodesk\\3ds Max 2023\\3dsmax.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{\n    \"3DSMAX_VERSION\": \"2023\"\n}",
+                        "use_python_2": false
+                    }
+                ]
+            },
+            "flame": {
+                "enabled": true,
+                "label": "Flame",
+                "host_name": "flame",
+                "icon": "{}/app_icons/flame.png",
+                "environment": "{\n    \"FLAME_SCRIPT_DIRS\": {\n        \"windows\": \"\",\n        \"darwin\": \"\",\n        \"linux\": \"\"\n    },\n    \"FLAME_WIRETAP_HOSTNAME\": \"\",\n    \"FLAME_WIRETAP_VOLUME\": \"stonefs\",\n    \"FLAME_WIRETAP_GROUP\": \"staff\"\n}",
+                "variants": [
+                    {
+                        "name": "2021",
+                        "label": "2021",
+                        "executables": {
+                            "windows": [],
+                            "linux": [
+                                "/opt/Autodesk/flame_2021/bin/startApplication"
+                            ],
+                            "darwin": [
+                                "/opt/Autodesk/flame_2021/bin/flame.app/Contents/MacOS/startApp"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{\n    \"AYON_FLAME_PYTHON_EXEC\": \"/opt/Autodesk/python/2021/bin/python2.7\",\n    \"AYON_FLAME_PYTHONPATH\": \"/opt/Autodesk/flame_2021/python\",\n    \"AYON_WIRETAP_TOOLS\": \"/opt/Autodesk/wiretap/tools/2021\"\n}",
+                        "use_python_2": true
+                    },
+                    {
+                        "name": "2021_1",
+                        "label": "2021.1",
+                        "executables": {
+                            "windows": [],
+                            "linux": [
+                                "/opt/Autodesk/flame_2021.1/bin/startApplication"
+                            ],
+                            "darwin": [
+                                "/opt/Autodesk/flame_2021.1/bin/flame.app/Contents/MacOS/startApp"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{\n  \"AYON_FLAME_PYTHON_EXEC\": \"/opt/Autodesk/python/2021.1/bin/python2.7\",\n  \"AYON_FLAME_PYTHONPATH\": \"/opt/Autodesk/flame_2021.1/python\",\n  \"AYON_WIRETAP_TOOLS\": \"/opt/Autodesk/wiretap/tools/2021.1\"\n}",
+                        "use_python_2": true
+                    }
+                ]
+            },
+            "nuke": {
+                "enabled": true,
+                "label": "Nuke",
+                "host_name": "nuke",
+                "icon": "{}/app_icons/nuke.png",
+                "environment": "{\n    \"NUKE_PATH\": [\n        \"{NUKE_PATH}\",\n        \"{OPENPYPE_STUDIO_PLUGINS}/nuke\"\n    ]\n}",
+                "variants": [
+                    {
+                        "name": "15-0",
+                        "label": "15.0",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke15.0v2\\Nuke15.0.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke5.0v2/Nuke15.0"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke15.0v2/Nuke15.0v2.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    },
+                    {
+                        "name": "14-0",
+                        "label": "14.0",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke14.0v5\\Nuke14.0.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke14.0v5/Nuke14.0"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke14.0v5/Nuke14.0v5.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    },
+                    {
+                        "name": "13-2",
+                        "label": "13.2",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke13.2v5\\Nuke13.2.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke13.2v5/Nuke13.2"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke13.2v5/Nuke13.2v5.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    }
+                ]
+            },
+            "nukeassist": {
+                "enabled": true,
+                "label": "Nuke Assist",
+                "host_name": "nuke",
+                "icon": "{}/app_icons/nuke.png",
+                "environment": "{\n    \"NUKE_PATH\": [\n        \"{NUKE_PATH}\",\n        \"{OPENPYPE_STUDIO_PLUGINS}/nuke\"\n    ]\n}",
+                "variants": [
+                    {
+                        "name": "15-0",
+                        "label": "15.0",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke15.0v2\\Nuke15.0.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke5.0v2/Nuke15.0"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke15.0v2/NukeAssist15.0v2.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--nukeassist"
+                            ],
+                            "linux": [
+                                "--nukeassist"
+                            ],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    },
+                    {
+                        "name": "14-0",
+                        "label": "14.0",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke14.0v5\\Nuke14.0.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke14.0v5/Nuke14.0"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke14.0v5/NukeAssist14.0v5.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--nukeassist"
+                            ],
+                            "linux": [
+                                "--nukeassist"
+                            ],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    },
+                    {
+                        "name": "13-2",
+                        "label": "13.2",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke13.2v5\\Nuke13.2.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke13.2v5/Nuke13.2"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke13.2v5/NukeAssist13.2v5.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--nukeassist"
+                            ],
+                            "linux": [
+                                "--nukeassist"
+                            ],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    }
+                ]
+            },
+            "nukex": {
+                "enabled": true,
+                "label": "Nuke X",
+                "host_name": "nuke",
+                "icon": "{}/app_icons/nukex.png",
+                "environment": "{\n    \"NUKE_PATH\": [\n        \"{NUKE_PATH}\",\n        \"{OPENPYPE_STUDIO_PLUGINS}/nuke\"\n    ]\n}",
+                "variants": [
+                    {
+                        "name": "15-0",
+                        "label": "15.0",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke15.0v2\\Nuke15.0.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke5.0v2/Nuke15.0"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke15.0v2/NukeX15.0v2.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--nukex"
+                            ],
+                            "linux": [
+                                "--nukex"
+                            ],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    },
+                    {
+                        "name": "14-0",
+                        "label": "14.0",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke14.0v5\\Nuke14.0.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke14.0v5/Nuke14.0"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke14.0v5/NukeX14.0v5.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--nukex"
+                            ],
+                            "linux": [
+                                "--nukex"
+                            ],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    },
+                    {
+                        "name": "13-2",
+                        "label": "13.2",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke13.2v5\\Nuke13.2.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke13.2v5/Nuke13.2"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke13.2v5/NukeX13.2v5.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--nukex"
+                            ],
+                            "linux": [
+                                "--nukex"
+                            ],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    }
+                ]
+            },
+            "nukestudio": {
+                "enabled": true,
+                "label": "Nuke Studio",
+                "host_name": "hiero",
+                "icon": "{}/app_icons/nukestudio.png",
+                "environment": "{\n    \"WORKFILES_STARTUP\": \"0\",\n    \"TAG_ASSETBUILD_STARTUP\": \"0\"\n}",
+                "variants": [
+                    {
+                        "name": "15-0",
+                        "label": "15.0",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke15.0v2\\Nuke15.0.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke5.0v2/Nuke15.0"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke15.0v2/NukeStudio15.0v2.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--studio"
+                            ],
+                            "linux": [
+                                "--studio"
+                            ],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    },
+                    {
+                        "name": "14-0",
+                        "label": "14.0",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke14.0v5\\Nuke14.0.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke14.0v5/Nuke14.0"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke14.0v5/NukeStudio14.0v5.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--studio"
+                            ],
+                            "linux": [
+                                "--studio"
+                            ],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    },
+                    {
+                        "name": "13-2",
+                        "label": "13.2",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke13.2v5\\Nuke13.2.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke13.2v5/Nuke13.2"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke13.2v5/NukeStudio13.2v5.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--studio"
+                            ],
+                            "linux": [
+                                "--studio"
+                            ],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    }
+                ]
+            },
+            "hiero": {
+                "enabled": true,
+                "label": "Hiero",
+                "host_name": "hiero",
+                "icon": "{}/app_icons/hiero.png",
+                "environment": "{\n    \"WORKFILES_STARTUP\": \"0\",\n    \"TAG_ASSETBUILD_STARTUP\": \"0\"\n}",
+                "variants": [
+                    {
+                        "name": "15-0",
+                        "label": "15.0",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke15.0v2\\Nuke15.0.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke5.0v2/Nuke15.0"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke15.0v2/Hiero15.0v2.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--hiero"
+                            ],
+                            "linux": [
+                                "--hiero"
+                            ],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    },
+                    {
+                        "name": "14-0",
+                        "label": "14.0",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke14.0v5\\Nuke14.0.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke14.0v5/Nuke14.0"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke14.0v5/Hiero14.0v5.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--hiero"
+                            ],
+                            "linux": [
+                                "--hiero"
+                            ],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    },
+                    {
+                        "name": "13-2",
+                        "label": "13.2",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Nuke13.2v5\\Nuke13.2.exe"
+                            ],
+                            "linux": [
+                                "/usr/local/Nuke13.2v5/Nuke13.2"
+                            ],
+                            "darwin": [
+                                "/Applications/Nuke13.2v5/Hiero13.2v5.app"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--hiero"
+                            ],
+                            "linux": [
+                                "--hiero"
+                            ],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    }
+                ]
+            },
+            "fusion": {
+                "enabled": true,
+                "label": "Fusion",
+                "host_name": "fusion",
+                "icon": "{}/app_icons/fusion.png",
+                "environment": "{\n    \"FUSION_PYTHON3_HOME\": {\n        \"windows\": \"{LOCALAPPDATA}/Programs/Python/Python36\",\n        \"darwin\": \"~/Library/Python/3.6/bin\",\n        \"linux\": \"/opt/Python/3.6/bin\"\n    }\n}",
+                "variants": [
+                    {
+                        "name": "18",
+                        "label": "18",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Blackmagic Design\\Fusion 18\\Fusion.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    },
+                    {
+                        "name": "17",
+                        "label": "17",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Blackmagic Design\\Fusion 17\\Fusion.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    },
+                    {
+                        "name": "16",
+                        "label": "16",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Blackmagic Design\\Fusion 16\\Fusion.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    }
+                ]
+            },
+            "resolve": {
+                "enabled": true,
+                "label": "Resolve",
+                "host_name": "resolve",
+                "icon": "{}/app_icons/resolve.png",
+                "environment": "{\n    \"RESOLVE_UTILITY_SCRIPTS_SOURCE_DIR\": [],\n    \"RESOLVE_PYTHON3_HOME\": {\n        \"windows\": \"{LOCALAPPDATA}/Programs/Python/Python36\",\n        \"darwin\": \"~/Library/Python/3.6/bin\",\n        \"linux\": \"/opt/Python/3.6/bin\"\n    }\n}",
+                "variants": [
+                    {
+                        "name": "stable",
+                        "label": "stable",
+                        "executables": {
+                            "windows": [
+                                "C:/Program Files/Blackmagic Design/DaVinci Resolve/Resolve.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": false
+                    }
+                ]
+            },
+            "houdini": {
+                "enabled": true,
+                "label": "Houdini",
+                "host_name": "houdini",
+                "icon": "{}/app_icons/houdini.png",
+                "environment": "{}",
+                "variants": [
+                    {
+                        "name": "19-5",
+                        "label": "19.5",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Side Effects Software\\Houdini 19.5.805\\bin\\houdini.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": true
+                    },
+                    {
+                        "name": "19-0",
+                        "label": "19.0",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Side Effects Software\\Houdini 19.0.720\\bin\\houdini.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": true
+                    },
+                    {
+                        "name": "18-5",
+                        "label": "18.5",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Side Effects Software\\Houdini 18.5.759\\bin\\houdini.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}",
+                        "use_python_2": true
+                    }
+                ]
+            },
+            "blender": {
+                "enabled": true,
+                "label": "Blender",
+                "host_name": "blender",
+                "icon": "{}/app_icons/blender.png",
+                "environment": "{}",
+                "variants": [
+                    {
+                        "name": "3-6-5",
+                        "label": "3.6.5 LTS",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Blender Foundation\\Blender 3.6\\blender.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--python-use-system-env"
+                            ],
+                            "linux": [
+                                "--python-use-system-env"
+                            ],
+                            "darwin": [
+                                "--python-use-system-env"
+                            ]
+                        },
+                        "environment": "{}"
+                    },
+                    {
+                        "name": "2-90",
+                        "label": "2.90",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Blender Foundation\\Blender 2.90\\blender.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--python-use-system-env"
+                            ],
+                            "linux": [
+                                "--python-use-system-env"
+                            ],
+                            "darwin": [
+                                "--python-use-system-env"
+                            ]
+                        },
+                        "environment": "{}"
+                    },
+                    {
+                        "name": "2-91",
+                        "label": "2.91",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Blender Foundation\\Blender 2.91\\blender.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [
+                                "--python-use-system-env"
+                            ],
+                            "linux": [
+                                "--python-use-system-env"
+                            ],
+                            "darwin": [
+                                "--python-use-system-env"
+                            ]
+                        },
+                        "environment": "{}"
+                    }
+                ]
+            },
+            "harmony": {
+                "enabled": true,
+                "label": "Harmony",
+                "host_name": "harmony",
+                "icon": "{}/app_icons/harmony.png",
+                "environment": "{\n    \"AVALON_HARMONY_WORKFILES_ON_LAUNCH\": \"1\"\n}",
+                "variants": [
+                    {
+                        "name": "22",
+                        "label": "22",
+                        "executables": {
+                            "windows": [
+                                "c:\\Program Files (x86)\\Toon Boom Animation\\Toon Boom Harmony 22 Premium\\win64\\bin\\HarmonyPremium.exe"
+                            ],
+                            "linux": [],
+                            "darwin": [
+                                "/Applications/Toon Boom Harmony 22 Premium/Harmony Premium.app/Contents/MacOS/Harmony Premium"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    },
+                    {
+                        "name": "21",
+                        "label": "21",
+                        "executables": {
+                            "windows": [
+                                "c:\\Program Files (x86)\\Toon Boom Animation\\Toon Boom Harmony 21 Premium\\win64\\bin\\HarmonyPremium.exe"
+                            ],
+                            "linux": [],
+                            "darwin": [
+                                "/Applications/Toon Boom Harmony 21 Premium/Harmony Premium.app/Contents/MacOS/Harmony Premium"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    },
+                    {
+                        "name": "20",
+                        "label": "20",
+                        "executables": {
+                            "windows": [
+                                "c:\\Program Files (x86)\\Toon Boom Animation\\Toon Boom Harmony 20 Premium\\win64\\bin\\HarmonyPremium.exe"
+                            ],
+                            "linux": [],
+                            "darwin": [
+                                "/Applications/Toon Boom Harmony 20 Premium/Harmony Premium.app/Contents/MacOS/Harmony Premium"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    },
+                    {
+                        "name": "17",
+                        "label": "17",
+                        "executables": {
+                            "windows": [
+                                "c:\\Program Files (x86)\\Toon Boom Animation\\Toon Boom Harmony 17 Premium\\win64\\bin\\HarmonyPremium.exe"
+                            ],
+                            "linux": [],
+                            "darwin": [
+                                "/Applications/Toon Boom Harmony 17 Premium/Harmony Premium.app/Contents/MacOS/Harmony Premium"
+                            ]
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    }
+                ]
+            },
+            "tvpaint": {
+                "enabled": true,
+                "label": "TVPaint",
+                "host_name": "tvpaint",
+                "icon": "{}/app_icons/tvpaint.png",
+                "environment": "{}",
+                "variants": [
+                    {
+                        "name": "animation_11-64bits",
+                        "label": "11 (64bits)",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\TVPaint Developpement\\TVPaint Animation 11 (64bits)\\TVPaint Animation 11 (64bits).exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    },
+                    {
+                        "name": "animation_11-32bits",
+                        "label": "11 (32bits)",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files (x86)\\TVPaint Developpement\\TVPaint Animation 11 (32bits)\\TVPaint Animation 11 (32bits).exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    }
+                ]
+            },
+            "photoshop": {
+                "enabled": true,
+                "label": "Photoshop",
+                "host_name": "photoshop",
+                "icon": "{}/app_icons/photoshop.png",
+                "environment": "{\n    \"AVALON_PHOTOSHOP_WORKFILES_ON_LAUNCH\": \"1\",\n    \"WORKFILES_SAVE_AS\": \"Yes\"\n}",
+                "variants": [
+                    {
+                        "name": "2022",
+                        "label": "2022",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Adobe\\Adobe Photoshop 2022\\Photoshop.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    },
+                    {
+                        "name": "2023",
+                        "label": "2023",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Adobe\\Adobe Photoshop 2023\\Photoshop.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    },
+                    {
+                        "name": "2024",
+                        "label": "2024",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Adobe\\Adobe Photoshop 2024\\Photoshop.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    }
+                ]
+            },
+            "aftereffects": {
+                "enabled": true,
+                "label": "AfterEffects",
+                "host_name": "aftereffects",
+                "icon": "{}/app_icons/aftereffects.png",
+                "environment": "{\n    \"AVALON_AFTEREFFECTS_WORKFILES_ON_LAUNCH\": \"1\",\n    \"WORKFILES_SAVE_AS\": \"Yes\"\n}",
+                "variants": [
+                    {
+                        "name": "2021",
+                        "label": "2021",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Adobe\\Adobe After Effects 2021\\Support Files\\AfterFX.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    },
+                    {
+                        "name": "2022",
+                        "label": "2022",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Adobe\\Adobe After Effects 2022\\Support Files\\AfterFX.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{\n  \"MULTIPROCESS\": \"No\"\n}"
+                    },
+                    {
+                        "name": "2023",
+                        "label": "2023",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Adobe\\Adobe After Effects 2023\\Support Files\\AfterFX.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{\n  \"MULTIPROCESS\": \"No\"\n}"
+                    },
+                    {
+                        "name": "2024",
+                        "label": "2024",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Adobe\\Adobe After Effects 2024\\Support Files\\AfterFX.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{\n  \"MULTIPROCESS\": \"No\"\n}"
+                    }
+                ]
+            },
+            "celaction": {
+                "enabled": true,
+                "label": "CelAction 2D",
+                "host_name": "celaction",
+                "icon": "app_icons/celaction.png",
+                "environment": "{\n    \"CELACTION_TEMPLATE\": \"{OPENPYPE_REPOS_ROOT}/openpype/hosts/celaction/celaction_template_scene.scn\"\n}",
+                "variants": [
+                    {
+                        "name": "local",
+                        "label": "local",
+                        "executables": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    }
+                ]
+            },
+            "substancepainter": {
+                "enabled": true,
+                "label": "Substance Painter",
+                "host_name": "substancepainter",
+                "icon": "{}/app_icons/substancepainter.png",
+                "environment": "{}",
+                "variants": [
+                    {
+                        "name": "stable",
+                        "label": "Stable",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Adobe\\Adobe Substance 3D Painter\\Adobe Substance 3D Painter.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    }
+                ]
+            },
+            "unreal": {
+                "enabled": false,
+                "label": "Unreal Editor",
+                "host_name": "unreal",
+                "icon": "{}/app_icons/ue4.png",
+                "environment": "{}",
+                "variants": [
+                    {
+                        "name": "5-0",
+                        "label": "5.0",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Epic Games\\UE_5.0\\Engine\\Binaries\\Win64\\UnrealEditor.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    },
+                    {
+                        "name": "5-1",
+                        "label": "5.1",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Epic Games\\UE_5.1\\Engine\\Binaries\\Win64\\UnrealEditor.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    },
+                    {
+                        "name": "5-2",
+                        "label": "5.2",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Epic Games\\UE_5.2\\Engine\\Binaries\\Win64\\UnrealEditor.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    }
+                ]
+            },
+            "wrap": {
+                "enabled": true,
+                "label": "Wrap",
+                "host_name": "wrap",
+                "icon": "{}/app_icons/wrap.png",
+                "environment": "{\n    \n}",
+                "variants": [
+                    {
+                        "name": "2023",
+                        "label": "",
+                        "executables": {
+                            "windows": [
+                                "c:\\Program Files\\Faceform\\Wrap 2023.10.2\\Wrap.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{\n   \n}"
+                    }
+                ]
+            },
+            "openrv": {
+                "enabled": true,
+                "label": "OpenRV",
+                "host_name": "openrv",
+                "icon": "{}/app_icons/openrv.png",
+                "environment": "{\n    \n}",
+                "variants": [
+                    {
+                        "name": "1.0.0",
+                        "label": "",
+                        "executables": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{\n   \n}"
+                    }
+                ]
+            },
+            "zbrush": {
+                "enabled": true,
+                "label": "Zbrush",
+                "host_name": "zbrush",
+                "icon": "{}/app_icons/zbrush.png",
+                "environment": "{\n    \"ZBRUSH_PLUGIN_PATH\": [\n        \"{ZBRUSH_PLUGIN_PATH}\",\n        \"{OPENPYPE_STUDIO_PLUGINS}/zbrush/api/zscripts\"\n    ]\n}",
+                "variants": [
+                    {
+                        "name": "2024",
+                        "label": "",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\Maxon ZBrush 2024\\ZBrush.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    }
+                ]
+            },
+            "equalizer": {
+                "enabled": true,
+                "label": "3DEqualizer",
+                "host_name": "equalizer",
+                "icon": "{}/app_icons/3de4.png",
+                "environment": "{}",
+                "variants": [
+                    {
+                        "name": "7-1v2",
+                        "label": "7.1v2",
+                        "executables": {
+                            "windows": [
+                                "C:\\Program Files\\3DE4_win64_r7.1v2\\bin\\3DE4.exe"
+                            ],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "arguments": {
+                            "windows": [],
+                            "linux": [],
+                            "darwin": []
+                        },
+                        "environment": "{}"
+                    }
+                ]
+            },
+            "additional_apps": []
+        },
+        "tool_groups": [
+            {
+                "name": "htoa",
+                "label": "Arnold for Houdini (example)",
+                "environment": "{\n    \"_comment_\": \"{STUDIO_SW} points to software repository. Can be defined in Core addon globally\",\n\n    \"HOUDINI_PATH\": [\n        \"{STUDIO_SW}/APP/HTOA/{HTOA_VERSION}/HOUDINI{HOUDINI_VERSION}/WINDOWS/htoa-6.1.3.3_rdb15014_houdini-{HTOA_VERSION}\",\n        \"{HOUDINI_PATH}\"\n    ],\n    \"PATH\": {\n        \"windows\": [\n            \"{STUDIO_SW}/APP/HTOA/{HTOA_VERSION}/HOUDINI{HOUDINI_VERSION}/WINDOWS/htoa-6.1.3.3_rdb15014_houdini-{HTOA_VERSION}/scripts/bin\",\n            \"{PATH}\"\n        ]\n    }\n}",
+                "variants": [
+                    {
+                        "name": "5-4-2-7",
+                        "label": "",
+                        "host_names": [
+                            "houdini"
+                        ],
+                        "app_variants": [],
+                        "environment": "{\n    \"HTOA_VERSION\": \"5.4.2.7\"\n}"
+                    }
+                ]
+            },
+            {
+                "name": "mtoa",
+                "label": "Arnold for Maya (example)",
+                "environment": "{\n    \"_comment_\": \"{STUDIO_SW} points to software repository. Can be defined in Core addon globally\",\n\n    \"MTOA\": {\n        \"darwin\": \"{STUDIO_SW}/APP/MTOA/{MTOA_VERSION}/MAYA{MAYA_VERSION}/MAC\",\n        \"linux\": \"{STUDIO_SW}/APP/MTOA/{MTOA_VERSION}/MAYA{MAYA_VERSION}/LINUX\",\n        \"windows\": \"{STUDIO_SW}/APP/MTOA/{MTOA_VERSION}/MAYA{MAYA_VERSION}/WINDOWS\"\n    },\n    \"MAYA_MODULE_PATH\": [\n        \"{STUDIO_SW}/APP/MTOA\",\n        \"{MAYA_MODULE_PATH}\"\n    ],\n    \"DYLD_LIBRARY_PATH\": {\n        \"darwin\": \"{MTOA}/bin\"\n    },\n    \"PATH\": {\n        \"windows\": [\n            \"{MTOA}/bin\",\n            \"{PATH}\"\n        ]\n    },\n    \"XBMLANGPATH\": [\n        \"{MTOA}/icons\",\n        \"{XBMLANGPATH}\"\n    ],\n    \"MAYA_RENDER_DESC_PATH\": [\n        \"{MTOA}\",\n        \"{MAYA_RENDER_DESC_PATH}\"\n    ],\n    \"MTOA_STARTUP_LOG_VERBOSITY\": \"3\"\n}",
+                "variants": [
+                    {
+                        "name": "5-3-1-0",
+                        "label": "",
+                        "host_names": [],
+                        "app_variants": [],
+                        "environment": "{\n    \"MTOA_VERSION\": \"5.3.1.0\"\n}"
+                    },
+                    {
+                        "name": "5-3-4-1",
+                        "label": "",
+                        "host_names": [],
+                        "app_variants": [],
+                        "environment": "{\n    \"MTOA_VERSION\": \"5.3.4.1\"\n}"
+                    }
+                ]
+            },
+            {
+                "name": "redshiftMaya",
+                "label": "Redshift for Maya (example)",
+                "environment": "{\n    \"_comment_\": \"{STUDIO_SW} points to software repository. Can be defined in Core addon globally\",\n\n    \"REDSHIFT_COREDATAPATH\": {\n        \"darwin\": \"{STUDIO_SW}/APP/REDSHIFT/{REDSHIFT_VERSION}/MAC\",\n        \"linux\": \"{STUDIO_SW}/APP/REDSHIFT/{REDSHIFT_VERSION}/LINUX\",\n        \"windows\": \"{STUDIO_SW}/APP/REDSHIFT/{REDSHIFT_VERSION}/WINDOWS\"\n    },\n    \"REDSHIFT_ABORTONLICENSEFAIL\": \"0\",\n    \"MAYA_MODULE_PATH\": [\n        \"{STUDIO_SW}/APP/REDSHIFT\",\n        \"{MAYA_MODULE_PATH}\"\n    ],\n    \"MAYA_PLUG_IN_PATH\": {\n        \"windows\": [\n            \"{REDSHIFT_COREDATAPATH}/Plugins/Maya/{MAYA_VERSION}/nt-x86-64\",\n            \"{MAYA_PLUG_IN_PATH}\"\n        ],\n        \"linux\": [\n            \"{REDSHIFT_COREDATAPATH}/redshift4maya/{MAYA_VERSION}\",\n            \"{MAYA_PLUG_IN_PATH}\"\n        ],\n        \"darwin\": [\n            \"{REDSHIFT_COREDATAPATH}/redshift4maya/{MAYA_VERSION}\",\n            \"{MAYA_PLUG_IN_PATH}\"\n        ]\n    },\n    \"MAYA_SCRIPT_PATH\": {\n        \"windows\": [\n            \"{REDSHIFT_COREDATAPATH}/Plugins/Maya/Common/scripts\",\n            \"{MAYA_SCRIPT_PATH}\"\n        ],\n        \"linux\": [\n            \"{REDSHIFT_COREDATAPATH}/redshift4maya/common/scripts\",\n            \"{MAYA_SCRIPT_PATH}\"\n        ],\n        \"darwin\": [\n            \"{REDSHIFT_COREDATAPATH}/redshift4maya/common/scripts\",\n            \"{MAYA_SCRIPT_PATH}\"\n        ]\n    },\n    \"REDSHIFT_PROCEDURALSPATH\": {\n        \"windows\": [\n            \"{REDSHIFT_COREDATAPATH}/Procedurals\",\n            \"{REDSHIFT_PROCEDURALSPATH}\"\n        ],\n        \"linux\": [\n            \"{REDSHIFT_COREDATAPATH}/procedurals\",\n            \"{REDSHIFT_PROCEDURALSPATH}\"\n        ],\n        \"darwin\": [\n            \"{REDSHIFT_COREDATAPATH}/procedurals\",\n            \"{REDSHIFT_PROCEDURALSPATH}\"\n        ]\n    },\n    \"REDSHIFT_MAYAEXTENSIONSPATH\": {\n        \"windows\": [\n            \"{REDSHIFT_COREDATAPATH}/Plugins/Maya/{MAYA_VERSION}/nt-x86-64/extensions\",\n            \"{REDSHIFT_MAYAEXTENSIONSPATH}\"\n        ],\n        \"linux\": [\n            \"{REDSHIFT_COREDATAPATH}/redshift4maya/{MAYA_VERSION}/extensions\",\n            \"{REDSHIFT_MAYAEXTENSIONSPATH}\"\n        ],\n        \"darwin\": [\n            \"{REDSHIFT_COREDATAPATH}/redshift4maya/{MAYA_VERSION}/extensions\",\n            \"{REDSHIFT_MAYAEXTENSIONSPATH}\"\n        ]\n    },\n    \"XBMLANGPATH\": {\n        \"windows\": [\n            \"{REDSHIFT_COREDATAPATH}/Plugins/Maya/Common/icons\",\n            \"{XBMLANGPATH}\"\n        ],\n        \"linux\": [\n            \"{REDSHIFT_COREDATAPATH}/redshift4maya/common/icons\",\n            \"{XBMLANGPATH}\"\n        ],\n        \"darwin\": [\n            \"{REDSHIFT_COREDATAPATH}/redshift4maya/common/icons\",\n            \"{XBMLANGPATH}\"\n        ]\n    },\n    \"MAYA_RENDER_DESC_PATH\": {\n        \"windows\": [\n            \"{REDSHIFT_COREDATAPATH}/Plugins/Maya/Common/rendererDesc\",\n            \"{MAYA_RENDER_DESC_PATH}\"\n        ],\n        \"linux\": [\n            \"{REDSHIFT_COREDATAPATH}/redshift4maya/common/rendererDesc\",\n            \"{MAYA_RENDER_DESC_PATH}\"\n        ],\n        \"darwin\": [\n            \"{REDSHIFT_COREDATAPATH}/redshift4maya/common/rendererDesc\",\n            \"{MAYA_RENDER_DESC_PATH}\"\n        ]\n    },\n    \"MAYA_CUSTOM_TEMPLATE_PATH\": {\n        \"windows\": [\n            \"{REDSHIFT_COREDATAPATH}/Plugins/Maya/Common/scripts/NETemplates\",\n            \"{MAYA_CUSTOM_TEMPLATE_PATH}\"\n        ],\n        \"linux\": [\n            \"{REDSHIFT_COREDATAPATH}/redshift4maya/common/scripts/NETemplates\",\n            \"{MAYA_CUSTOM_TEMPLATE_PATH}\"\n        ],\n        \"darwin\": [\n            \"{REDSHIFT_COREDATAPATH}/redshift4maya/common/scripts/NETemplates\",\n            \"{MAYA_CUSTOM_TEMPLATE_PATH}\"\n        ]\n    },\n    \"PATH\": {\n        \"windows\": [\n            \"{REDSHIFT_COREDATAPATH}/bin\",\n            \"{PATH}\"\n        ]\n    }\n}",
+                "variants": [
+                    {
+                        "name": "3-5-23",
+                        "label": "",
+                        "host_names": [],
+                        "app_variants": [],
+                        "environment": "{\n    \"REDSHIFT_VERSION\": \"3.5.23\"\n}"
+                    }
+                ]
+            },
+            {
+                "name": "redshift3dsmax",
+                "label": "Redshift for 3dsmax (example)",
+                "environment": "{\n    \"_comment_\": \"{STUDIO_SW} points to software repository. Can be defined in Core addon globally\",\n\n    \"REDSHIFT_COREDATAPATH\": {\n        \"darwin\": \"{STUDIO_SW}/APP/REDSHIFT/{REDSHIFT_VERSION}/MAC\",\n        \"linux\": \"{STUDIO_SW}/APP/REDSHIFT/{REDSHIFT_VERSION}/LINUX\",\n        \"windows\": \"{STUDIO_SW}/APP/REDSHIFT/{REDSHIFT_VERSION}/WINDOWS\"\n    },\n    \"REDSHIFT_ABORTONLICENSEFAIL\": \"0\",\n    \"REDSHIFT_PROCEDURALSPATH\": {\n        \"windows\": [\n            \"{REDSHIFT_COREDATAPATH}/Procedurals\",\n            \"{REDSHIFT_PROCEDURALSPATH}\"\n        ],\n        \"linux\": [\n            \"{REDSHIFT_COREDATAPATH}/procedurals\",\n            \"{REDSHIFT_PROCEDURALSPATH}\"\n        ],\n        \"darwin\": [\n            \"{REDSHIFT_COREDATAPATH}/procedurals\",\n            \"{REDSHIFT_PROCEDURALSPATH}\"\n        ]\n    },\n    \"PATH\": {\n        \"windows\": [\n            \"{REDSHIFT_COREDATAPATH}/bin\",\n            \"{PATH}\"\n        ]\n    }\n}",
+                "variants": [
+                    {
+                        "name": "3-5-19",
+                        "label": "",
+                        "host_names": [
+                            "max"
+                        ],
+                        "app_variants": [],
+                        "environment": "{\n    \"REDSHIFT_VERSION\": \"3.5.19\"\n}"
+                    }
+                ]
+            },
+            {
+                "name": "rendermanMaya",
+                "label": "Renderman for Maya (example)",
+                "environment": "{\n    \"_comment_\": \"{STUDIO_SW} points to software repository. Can be defined in Core addon globally\",\n\n    \"RFMTREE\": {\n        \"darwin\": \"{STUDIO_SW}/APP/RENDERMAN/{RM_VERSION}/MAC/MAYA\",\n        \"linux\": \"{STUDIO_SW}/APP/RENDERMAN/{RM_VERSION}/LINUX/MAYA\",\n        \"windows\": \"{STUDIO_SW}/APP/RENDERMAN/{RM_VERSION}/WINDOWS/MAYA\"\n    },\n    \"RMANTREE\": {\n        \"darwin\": \"{STUDIO_SW}/APP/RENDERMAN/{RM_VERSION}/MAC/RenderManProServer-{RM_VERSION}\",\n        \"linux\": \"{STUDIO_SW}/APP/RENDERMAN/{RM_VERSION}/LINUX/RenderManProServer-{RM_VERSION}\",\n        \"windows\": \"{STUDIO_SW}/APP/RENDERMAN/{RM_VERSION}/WINDOWS/RenderManProServer-{RM_VERSION}\"\n    },\n    \"MAYA_MODULE_PATH\": [\n        \"{STUDIO_SW}/APP/RENDERMAN\",\n        \"{MAYA_MODULE_PATH}\"\n    ],\n    \"PIXAR_LICENSE_FILE\": \"{STUDIO_SW}/APP/RENDERMAN/pixar.license\",\n    \"RFM_DO_NOT_CREATE_MODULE_FILE\": \"1\"\n}",
+                "variants": [
+                    {
+                        "name": "24-3-maya",
+                        "label": "24.3 RFM",
+                        "host_names": [
+                            "maya"
+                        ],
+                        "app_variants": [
+                            "maya/2022"
+                        ],
+                        "environment": "{\n    \"RFMTREE\": {\n        \"windows\": \"C:\\\\Program Files\\\\Pixar\\\\RenderManForMaya-24.3\",\n        \"darwin\": \"/Applications/Pixar/RenderManForMaya-24.3\",\n        \"linux\": \"/opt/pixar/RenderManForMaya-24.3\"\n    },\n    \"RMANTREE\": {\n        \"windows\": \"C:\\\\Program Files\\\\Pixar\\\\RenderManProServer-24.3\",\n        \"darwin\": \"/Applications/Pixar/RenderManProServer-24.3\",\n        \"linux\": \"/opt/pixar/RenderManProServer-24.3\"\n    }\n}"
+                    }
+                ]
+            },
+            {
+                "name": "mGear",
+                "label": "mGear for Maya (example)",
+                "environment": "{\n    \"_comment_\": \"{STUDIO_SW} points to software repository. Can be defined in Core addon globally\",\n\n    \"MGEAR_ROOT\": \"{STUDIO_SW}/APP/MGEAR/{MGEAR_VERSION}/MAYA{MAYA_VERSION}/windows/x64\",\n    \"MAYA_MODULE_PATH\": [\n        \"{STUDIO_SW}/APP/MGEAR/{MGEAR_VERSION}/release\",\n        \"{MAYA_MODULE_PATH}\"\n    ]\n}",
+                "variants": [
+                    {
+                        "name": "4-0-7",
+                        "label": "",
+                        "host_names": [],
+                        "app_variants": [],
+                        "environment": "{\n    \"MGEAR_VERSION\": \"4.0.7\"\n}"
+                    }
+                ]
+            },
+            {
+                "name": "yetiMaya",
+                "label": "Yeti for Maya (example)",
+                "environment": "{\n    \"_comment_\": \"{STUDIO_SW} points to software repository. Can be defined in Core addon globally\",\n\n    \"YETI_HOME\": {\n        \"darwin\": \"{STUDIO_SW}/APP/YETI/{YETI_VERSION}/MAYA{MAYA_VERSION}/MAC\",\n        \"linux\": \"{STUDIO_SW}/APP/YETI/{YETI_VERSION}/MAYA{MAYA_VERSION}/LINUX\",\n        \"windows\": \"{STUDIO_SW}/APP/YETI/{YETI_VERSION}/MAYA{MAYA_VERSION}/WINDOWS\"\n    },\n    \"YETI_TMP\": {\n        \"windows\": \"C:/temp\",\n        \"darwin\": \"/tmp\",\n        \"linux\": \"/tmp\"\n    },\n    \"peregrinel_LICENSE\": \"4202@35.158.197.250\",\n    \"MAYA_MODULE_PATH\": [\n        \"{STUDIO_SW}/APP/YETI\",\n        \"{MAYA_MODULE_PATH}\"\n    ]\n}",
+                "variants": [
+                    {
+                        "name": "4.2.11",
+                        "label": "",
+                        "host_names": [],
+                        "app_variants": [],
+                        "environment": "{\n    \"YETI_VERSION\": \"4.2.11\"\n}"
+                    }
+                ]
+            },
+            {
+                "name": "vrayMaya",
+                "label": "Vray for Maya (example)",
+                "environment": "{\n    \"_comment_\": \"{STUDIO_SW} points to software repository. Can be defined in Core addon globally\",\n\n    \"MAYA_MODULE_PATH\": {\n        \"windows\": [\n            \"{STUDIO_SW}/APP/VRAY/{VRAY_VERSION}/MAYA{MAYA_VERSION}/WINDOWS/maya_root/modules\",\n            \"{MAYA_MODULE_PATH}\"\n        ],\n        \"linux\": [\n            \"{STUDIO_SW}/APP/VRAY/{VRAY_VERSION}/MAYA{MAYA_VERSION}/LINUX/maya_root/modules\",\n            \"{MAYA_MODULE_PATH}\"\n        ],\n        \"darwin\": [\n            \"{STUDIO_SW}/APP/VRAY/{VRAY_VERSION}/MAYA{MAYA_VERSION}/MAC/maya_root/modules\",\n            \"{MAYA_MODULE_PATH}\"\n        ]\n    },\n    \"VRAY_AUTH_CLIENT_FILE_PATH\": \"{STUDIO_SW}/APP/VRAY\"\n}",
+                "variants": [
+                    {
+                        "name": "6.10.01",
+                        "label": "",
+                        "host_names": [
+                            ""
+                        ],
+                        "app_variants": [],
+                        "environment": "{\n    \"VRAY_VERSION\": \"6.10.01\"\n}"
+                    }
+                ]
+            },
+            {
+                "name": "vraynuke",
+                "label": "Vray for Nuke (example)",
+                "environment": "{\n    \"_comment_\": \"{STUDIO_SW} points to software repository. Can be defined in Core addon globally\",\n\n    \"VRAY_FOR_NUKE_13_0_PLUGINS\": {\n        \"windows\": \"{STUDIO_SW}/APP/VRAYNUKE/{VRAYNUKE_VERSION}/NUKE{NUKE_VRAY_VERSION}/WINDOWS/nuke_vray/plugins/vray\"\n    },\n    \"NUKE_PATH\": {\n        \"windows\": [\n            \"{STUDIO_SW}/APP/VRAYNUKE/{VRAYNUKE_VERSION}/NUKE{NUKE_VRAY_VERSION}/WINDOWS/nuke_root\",\n            \"{NUKE_PATH}\"\n        ]\n    },\n    \"PATH\": {\n        \"windows\": [\n            \"{STUDIO_SW}/APP/VRAYNUKE/{VRAYNUKE_VERSION}/NUKE{NUKE_VRAY_VERSION}/WINDOWS/nuke_vray\",\n            \"{PATH}\"\n        ]\n    },\n    \"VRAY_AUTH_CLIENT_FILE_PATH\": \"{STUDIO_SW}/APP/VRAY\"\n}",
+                "variants": [
+                    {
+                        "name": "5-20-00",
+                        "label": "",
+                        "host_names": [
+                            "nuke"
+                        ],
+                        "app_variants": [],
+                        "environment": "{\n    \"VRAYNUKE_VERSION\": \"5.20.00\"\n}"
+                    }
+                ]
+            }
+        ],
+        "only_available": true
+    },
+    "blender": {
+        "unit_scale_settings": {
+            "enabled": true,
+            "apply_on_opening": false,
+            "base_file_unit_scale": 1.0
+        },
+        "set_resolution_startup": true,
+        "set_frames_startup": true,
+        "imageio": {
+            "activate_host_color_management": true,
+            "ocio_config": {
+                "override_global_config": false,
+                "filepath": []
+            },
+            "file_rules": {
+                "activate_host_rules": false,
+                "rules": []
+            }
+        },
+        "RenderSettings": {
+            "default_render_image_folder": "renders/blender",
+            "aov_separator": "underscore",
+            "image_format": "exr",
+            "multilayer_exr": true,
+            "renderer": "CYCLES",
+            "compositing": true,
+            "aov_list": [
+                "combined"
+            ],
+            "custom_passes": []
+        },
+        "workfile_builder": {
+            "create_first_version": false,
+            "custom_templates": []
+        },
+        "publish": {
+            "ValidateCameraZeroKeyframe": {
+                "enabled": false,
+                "optional": true,
+                "active": true
+            },
+            "ValidateFileSaved": {
+                "enabled": true,
+                "optional": false,
+                "active": true,
+                "exclude_families": []
+            },
+            "ValidateInstanceEmpty": {
+                "enabled": true,
+                "optional": false,
+                "active": true
+            },
+            "ValidateMeshHasUvs": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            },
+            "ValidateMeshNoNegativeScale": {
+                "enabled": true,
+                "optional": false,
+                "active": true
+            },
+            "ValidateModelMeshUvMap1": {
+                "enabled": false,
+                "optional": true,
+                "active": true
+            },
+            "ValidateTransformZero": {
+                "enabled": false,
+                "optional": true,
+                "active": true
+            },
+            "ValidateNoColonsInName": {
+                "enabled": false,
+                "optional": true,
+                "active": true
+            },
+            "ValidateRenderCameraIsSet": {
+                "enabled": true,
+                "optional": false,
+                "active": true
+            },
+            "ValidateDeadlinePublish": {
+                "enabled": true,
+                "optional": false,
+                "active": true
+            },
+            "ExtractBlend": {
+                "enabled": true,
+                "optional": true,
+                "active": true,
+                "families": [
+                    "model",
+                    "camera",
+                    "rig",
+                    "action",
+                    "layout",
+                    "blendScene"
+                ],
+                "compress": false
+            },
+            "ExtractFBX": {
+                "enabled": false,
+                "optional": true,
+                "active": true
+            },
+            "ExtractModelABC": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            },
+            "ExtractBlendAnimation": {
+                "enabled": true,
+                "optional": true,
+                "active": true,
+                "compress": false
+            },
+            "ExtractAnimationFBX": {
+                "enabled": false,
+                "optional": true,
+                "active": true
+            },
+            "ExtractCamera": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            },
+            "ExtractCameraABC": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            },
+            "ExtractLayout": {
+                "enabled": true,
+                "optional": true,
+                "active": false
+            },
+            "ExtractThumbnail": {
+                "enabled": true,
+                "optional": true,
+                "active": true,
+                "presets": "{\n    \"model\": {\n        \"image_settings\": {\n            \"file_format\": \"JPEG\",\n            \"color_mode\": \"RGB\",\n            \"quality\": 100\n        },\n        \"display_options\": {\n            \"shading\": {\n                \"light\": \"STUDIO\",\n                \"studio_light\": \"Default\",\n                \"type\": \"SOLID\",\n                \"color_type\": \"OBJECT\",\n                \"show_xray\": false,\n                \"show_shadows\": false,\n                \"show_cavity\": true\n            },\n            \"overlay\": {\n                \"show_overlays\": false\n            }\n        }\n    },\n    \"rig\": {\n        \"image_settings\": {\n            \"file_format\": \"JPEG\",\n            \"color_mode\": \"RGB\",\n            \"quality\": 100\n        },\n        \"display_options\": {\n            \"shading\": {\n                \"light\": \"STUDIO\",\n                \"studio_light\": \"Default\",\n                \"type\": \"SOLID\",\n                \"color_type\": \"OBJECT\",\n                \"show_xray\": true,\n                \"show_shadows\": false,\n                \"show_cavity\": false\n            },\n            \"overlay\": {\n                \"show_overlays\": true,\n                \"show_ortho_grid\": false,\n                \"show_floor\": false,\n                \"show_axis_x\": false,\n                \"show_axis_y\": false,\n                \"show_axis_z\": false,\n                \"show_text\": false,\n                \"show_stats\": false,\n                \"show_cursor\": false,\n                \"show_annotation\": false,\n                \"show_extras\": false,\n                \"show_relationship_lines\": false,\n                \"show_outline_selected\": false,\n                \"show_motion_paths\": false,\n                \"show_object_origins\": false,\n                \"show_bones\": true\n            }\n        }\n    }\n}",
+                "compress": false
+            },
+            "ExtractPlayblast": {
+                "enabled": true,
+                "optional": true,
+                "active": true,
+                "presets": "{\n    \"default\": {\n        \"image_settings\": {\n            \"file_format\": \"PNG\",\n            \"color_mode\": \"RGB\",\n            \"color_depth\": \"8\",\n            \"compression\": 15\n        },\n        \"display_options\": {\n            \"shading\": {\n                \"type\": \"MATERIAL\",\n                \"render_pass\": \"COMBINED\"\n            },\n            \"overlay\": {\n                \"show_overlays\": false\n            }\n        }\n    }\n}",
+                "compress": false
             }
         }
     },
@@ -48,6 +1733,7 @@
         "studio_name": "",
         "studio_code": "",
         "environments": "{\n\"STUDIO_SW\": {\n        \"darwin\": \"/mnt/REPO_SW\",\n        \"linux\": \"/mnt/REPO_SW\",\n        \"windows\": \"P:/REPO_SW\"\n    }\n}",
+        "update_check_interval": 5,
         "disk_mapping": {
             "windows": [],
             "linux": [],
@@ -180,14 +1866,14 @@
                     {
                         "task_types": [],
                         "hosts": [],
-                        "workfile_template": "work"
+                        "workfile_template": "default"
                     },
                     {
                         "task_types": [],
                         "hosts": [
                             "unreal"
                         ],
-                        "workfile_template": "work_unreal"
+                        "workfile_template": "unreal"
                     }
                 ],
                 "last_workfile_on_startup": [
@@ -227,7 +1913,7 @@
                         "hosts": [],
                         "task_types": [],
                         "task_names": [],
-                        "template_name": "publish"
+                        "template_name": "default"
                     },
                     {
                         "product_types": [
@@ -238,7 +1924,7 @@
                         "hosts": [],
                         "task_types": [],
                         "task_names": [],
-                        "template_name": "publish_render"
+                        "template_name": "render"
                     },
                     {
                         "product_types": [
@@ -249,7 +1935,7 @@
                         ],
                         "task_types": [],
                         "task_names": [],
-                        "template_name": "publish_simpleUnrealTexture"
+                        "template_name": "simpleUnrealTexture"
                     },
                     {
                         "product_types": [
@@ -261,7 +1947,7 @@
                         ],
                         "task_types": [],
                         "task_names": [],
-                        "template_name": "publish_maya2unreal"
+                        "template_name": "maya2unreal"
                     },
                     {
                         "product_types": [
@@ -272,7 +1958,7 @@
                         ],
                         "task_types": [],
                         "task_names": [],
-                        "template_name": "publish_online"
+                        "template_name": "online"
                     },
                     {
                         "product_types": [
@@ -283,7 +1969,7 @@
                         ],
                         "task_types": [],
                         "task_names": [],
-                        "template_name": "publish_tycache"
+                        "template_name": "tycache"
                     }
                 ],
                 "hero_template_name_profiles": [
@@ -296,7 +1982,7 @@
                         ],
                         "task_types": [],
                         "task_names": [],
-                        "template_name": "hero_simpleUnrealTextureHero"
+                        "template_name": "simpleUnrealTextureHero"
                     }
                 ],
                 "custom_staging_dir_profiles": []
@@ -445,7 +2131,7 @@
                                     0,
                                     0,
                                     0,
-                                    1.0
+                                    0.0
                                 ],
                                 "width": 1920,
                                 "height": 1080,
@@ -510,7 +2196,7 @@
                                     0,
                                     0,
                                     0,
-                                    1.0
+                                    0.0
                                 ],
                                 "width": 0,
                                 "height": 0,
@@ -668,11 +2354,48 @@
         "project_folder_structure": "{\n    \"__project_root__\": {\n        \"prod\": {},\n        \"resources\": {\n            \"footage\": {\n                \"plates\": {},\n                \"offline\": {}\n            },\n            \"audio\": {},\n            \"art_dept\": {}\n        },\n        \"editorial\": {},\n        \"assets\": {\n            \"characters\": {},\n            \"locations\": {}\n        },\n        \"shots\": {}\n    }\n}",
         "project_environments": "{}"
     },
+    "resolve": {
+        "launch_openpype_menu_on_start": false,
+        "imageio": {
+            "activate_host_color_management": true,
+            "remapping": {
+                "rules": []
+            },
+            "ocio_config": {
+                "override_global_config": false,
+                "filepath": []
+            },
+            "file_rules": {
+                "activate_host_rules": false,
+                "rules": []
+            }
+        },
+        "create": {
+            "CreateShotClip": {
+                "hierarchy": "{folder}/{sequence}",
+                "clipRename": true,
+                "clipName": "{track}{sequence}{shot}",
+                "countFrom": 10,
+                "countSteps": 10,
+                "folder": "shots",
+                "episode": "ep01",
+                "sequence": "sq01",
+                "track": "{_track_}",
+                "shot": "sh###",
+                "vSyncOn": false,
+                "workfileFrameStart": 1001,
+                "handleStart": 10,
+                "handleEnd": 10
+            }
+        }
+    },
     "deadline": {
         "deadline_urls": [
             {
                 "name": "default",
-                "value": "http://127.0.0.1:8082"
+                "value": "http://127.0.0.1:8082",
+                "require_authentication": false,
+                "ssl": false
             }
         ],
         "deadline_server": "default",
@@ -692,6 +2415,85 @@
                     "deadline"
                 ]
             },
+            "AfterEffectsSubmitDeadline": {
+                "enabled": true,
+                "optional": false,
+                "active": true,
+                "use_published": true,
+                "priority": 50,
+                "chunk_size": 10000,
+                "group": "",
+                "department": "",
+                "multiprocess": true
+            },
+            "BlenderSubmitDeadline": {
+                "enabled": true,
+                "optional": false,
+                "active": true,
+                "use_published": true,
+                "priority": 50,
+                "chunk_size": 10,
+                "group": "none",
+                "job_delay": "00:00:00:00"
+            },
+            "CelactionSubmitDeadline": {
+                "enabled": true,
+                "deadline_department": "",
+                "deadline_priority": 50,
+                "deadline_pool": "",
+                "deadline_pool_secondary": "",
+                "deadline_group": "",
+                "deadline_chunk_size": 10,
+                "deadline_job_delay": "00:00:00:00"
+            },
+            "FusionSubmitDeadline": {
+                "enabled": true,
+                "optional": false,
+                "active": true,
+                "priority": 50,
+                "chunk_size": 10,
+                "concurrent_tasks": 1,
+                "group": "",
+                "plugin": "Fusion"
+            },
+            "HarmonySubmitDeadline": {
+                "enabled": true,
+                "optional": false,
+                "active": true,
+                "use_published": true,
+                "priority": 50,
+                "chunk_size": 10000,
+                "group": "",
+                "department": ""
+            },
+            "HoudiniCacheSubmitDeadline": {
+                "enabled": true,
+                "optional": false,
+                "active": true,
+                "priority": 50,
+                "chunk_size": 999999,
+                "group": ""
+            },
+            "HoudiniSubmitDeadline": {
+                "enabled": true,
+                "optional": false,
+                "active": true,
+                "priority": 50,
+                "chunk_size": 1,
+                "group": "",
+                "export_priority": 50,
+                "export_chunk_size": 10,
+                "export_group": ""
+            },
+            "MaxSubmitDeadline": {
+                "enabled": true,
+                "optional": false,
+                "active": true,
+                "use_published": true,
+                "priority": 50,
+                "chunk_size": 10,
+                "group": "none"
+            },
             "MayaSubmitDeadline": {
                 "enabled": true,
                 "optional": false,
@@ -709,25 +2511,6 @@
                 "scene_patches": [],
                 "strict_error_checking": true
             },
-            "MaxSubmitDeadline": {
-                "enabled": true,
-                "optional": false,
-                "active": true,
-                "use_published": true,
-                "priority": 50,
-                "chunk_size": 10,
-                "group": "none"
-            },
-            "FusionSubmitDeadline": {
-                "enabled": true,
-                "optional": false,
-                "active": true,
-                "priority": 50,
-                "chunk_size": 10,
-                "concurrent_tasks": 1,
-                "group": "",
-                "plugin": "Fusion"
-            },
             "NukeSubmitDeadline": {
                 "enabled": true,
                 "optional": false,
@@ -743,47 +2526,6 @@
                 "env_allowed_keys": [],
                 "env_search_replace_values": [],
                 "limit_groups": []
-            },
-            "HarmonySubmitDeadline": {
-                "enabled": true,
-                "optional": false,
-                "active": true,
-                "use_published": true,
-                "priority": 50,
-                "chunk_size": 10000,
-                "group": "",
-                "department": ""
-            },
-            "AfterEffectsSubmitDeadline": {
-                "enabled": true,
-                "optional": false,
-                "active": true,
-                "use_published": true,
-                "priority": 50,
-                "chunk_size": 10000,
-                "group": "",
-                "department": "",
-                "multiprocess": true
-            },
-            "CelactionSubmitDeadline": {
-                "enabled": true,
-                "deadline_department": "",
-                "deadline_priority": 50,
-                "deadline_pool": "",
-                "deadline_pool_secondary": "",
-                "deadline_group": "",
-                "deadline_chunk_size": 10,
-                "deadline_job_delay": "00:00:00:00"
-            },
-            "BlenderSubmitDeadline": {
-                "enabled": true,
-                "optional": false,
-                "active": true,
-                "use_published": true,
-                "priority": 50,
-                "chunk_size": 10,
-                "group": "none",
-                "job_delay": "00:00:00:00"
             },
             "ProcessSubmittedCacheJobOnFarm": {
                 "enabled": true,
@@ -802,6 +2544,12 @@
                 "deadline_priority": 50,
                 "publishing_script": "",
                 "skip_integration_repre_list": [],
+                "families_transfer": [
+                    "render3d",
+                    "render2d",
+                    "ftrack",
+                    "slate"
+                ],
                 "aov_filter": [
                     {
                         "name": "maya",
@@ -869,6 +2617,9 @@
         "hooks": {
             "InstallPySideToFusion": {
                 "enabled": true
+            },
+            "FusionLaunchMenuHook": {
+                "enabled": false
             }
         },
         "create": {
@@ -912,15 +2663,15 @@
                 "rules": []
             },
             "workfile": {
-                "ocioConfigName": "nuke-default",
-                "workingSpace": "linear",
-                "viewerLut": "sRGB",
-                "eightBitLut": "sRGB",
-                "sixteenBitLut": "sRGB",
-                "logLut": "Cineon",
-                "floatLut": "linear",
-                "thumbnailLut": "sRGB",
-                "monitorOutLut": "sRGB"
+                "ocioConfigName": "aces_1.2",
+                "workingSpace": "role_scene_linear",
+                "viewerLut": "ACES/sRGB",
+                "eightBitLut": "role_matte_paint",
+                "sixteenBitLut": "role_texture_paint",
+                "logLut": "role_compositing_log",
+                "floatLut": "role_scene_linear",
+                "thumbnailLut": "ACES/sRGB",
+                "monitorOutLut": "ACES/sRGB"
             },
             "regexInputs": {
                 "inputs": [
@@ -934,7 +2685,7 @@
         "create": {
             "CreateShotClip": {
                 "hierarchy": "{folder}/{sequence}",
-                "clipRename": false,
+                "clipRename": true,
                 "clipName": "{track}{sequence}{shot}",
                 "countFrom": 10,
                 "countSteps": 10,
@@ -1005,7 +2756,7 @@
             }
         },
         "imageio": {
-            "activate_host_color_management": true,
+            "activate_host_color_management": false,
             "ocio_config": {
                 "override_global_config": false,
                 "filepath": []
@@ -1013,6 +2764,12 @@
             "file_rules": {
                 "activate_host_rules": false,
                 "rules": []
+            },
+            "workfile": {
+                "enabled": false,
+                "default_display": "ACES",
+                "default_view": "sRGB",
+                "review_color_space": ""
             }
         },
         "shelves": [],
@@ -1144,6 +2901,11 @@
                 "chunk_size": 999999
             },
             "ValidateContainers": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            },
+            "ValidateInstanceInContextHoudini": {
                 "enabled": true,
                 "optional": true,
                 "active": true
@@ -1288,14 +3050,30 @@
                 "nearclip": 1.0,
                 "farclip": 1000.0
             },
+            "ValidateNoAnimation": {
+                "enabled": true,
+                "optional": true,
+                "active": false
+            },
             "ValidateLoadedPlugin": {
                 "enabled": false,
                 "optional": true,
                 "family_plugins_mapping": []
             },
-            "ValidateRenderPasses": {
+            "ValidateMeshHasUVs": {
                 "enabled": true,
                 "optional": true,
+                "active": false
+            },
+            "ValidateModelName": {
+                "enabled": true,
+                "optional": true,
+                "active": false,
+                "regex": "(.*)_(?P<subset>.*)_(GEO)"
+            },
+            "ValidateRenderPasses": {
+                "enabled": true,
+                "optional": false,
                 "active": true
             },
             "ExtractModelObj": {
@@ -1326,9 +3104,10 @@
         }
     },
     "maya": {
+        "use_cbid_workflow": true,
         "open_workfile_post_initialization": true,
         "explicit_plugins_loading": {
-            "enabled": true,
+            "enabled": false,
             "plugins_to_load": [
                 {
                     "enabled": false,
@@ -1791,7 +3570,7 @@
             }
         ],
         "maya_dirmap": {
-            "enabled": true,
+            "enabled": false,
             "use_env_var_as_root": false,
             "paths": {
                 "source_path": [],
@@ -1804,6 +3583,7 @@
         },
         "scriptsmenu": {
             "name": "Custom Tools",
+            "definition_type": "definition",
             "definition": [
                 {
                     "type": "action",
@@ -1816,7 +3596,8 @@
                         "shader"
                     ]
                 }
-            ]
+            ],
+            "definition_json": "[]"
         },
         "render_settings": {
             "apply_render_settings": true,
@@ -1988,7 +3769,7 @@
                 ]
             },
             "CreateLayout": {
-                "enabled": false,
+                "enabled": true,
                 "default_variants": [
                     "Main"
                 ]
@@ -2000,13 +3781,13 @@
                 ]
             },
             "CreateRenderSetup": {
-                "enabled": false,
+                "enabled": true,
                 "default_variants": [
                     "Main"
                 ]
             },
             "CreateReview": {
-                "enabled": false,
+                "enabled": true,
                 "default_variants": [
                     "Main"
                 ],
@@ -2265,6 +4046,9 @@
                 ]
             },
             "ValidateRenderSettings": {
+                "enabled": true,
+                "optional": false,
+                "active": true,
                 "arnold_render_attributes": [],
                 "vray_render_attributes": [],
                 "redshift_render_attributes": [],
@@ -2517,18 +4301,20 @@
                 "optional": false,
                 "active": true
             },
+            "ValidateAlembicDefaultsPointcache": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            },
+            "ValidateAlembicDefaultsAnimation": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            },
             "ExtractProxyAlembic": {
                 "enabled": false,
                 "families": [
                     "proxyAbc"
-                ]
-            },
-            "ExtractAlembic": {
-                "enabled": true,
-                "families": [
-                    "pointcache",
-                    "model",
-                    "vrayproxy.alembic"
                 ]
             },
             "ExtractObj": {
@@ -2631,16 +4417,6 @@
                 "active": true
             },
             "ValidateAssRelativePaths": {
-                "enabled": true,
-                "optional": false,
-                "active": true
-            },
-            "ValidateInstancerContent": {
-                "enabled": true,
-                "optional": false,
-                "active": true
-            },
-            "ValidateInstancerFrameRanges": {
                 "enabled": true,
                 "optional": false,
                 "active": true
@@ -2812,6 +4588,8 @@
             },
             "ExtractGPUCache": {
                 "enabled": false,
+                "optional": false,
+                "active": true,
                 "families": [
                     "model",
                     "animation",
@@ -2824,6 +4602,57 @@
                 "optimizeAnimationsForMotionBlur": true,
                 "writeMaterials": true,
                 "useBaseTessellation": true
+            },
+            "ExtractModel": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            },
+            "ExtractAlembic": {
+                "enabled": true,
+                "families": [
+                    "pointcache",
+                    "model",
+                    "vrayproxy.alembic"
+                ],
+                "eulerFilter": false,
+                "renderableOnly": false,
+                "stripNamespaces": true,
+                "uvsOnly": false,
+                "uvWrite": true,
+                "verbose": false,
+                "visibleOnly": false,
+                "wholeFrameGeo": false,
+                "worldSpace": true,
+                "writeColorSets": false,
+                "writeCreases": false,
+                "writeFaceSets": false,
+                "writeNormals": true,
+                "writeUVSets": false,
+                "writeVisibility": false,
+                "preRoll": false,
+                "preRollStartFrame": 0,
+                "dataFormat": "ogawa",
+                "bake_attributes": [],
+                "bake_attribute_prefixes": [],
+                "attr": "",
+                "attrPrefix": "",
+                "userAttr": "",
+                "userAttrPrefix": "",
+                "melPerFrameCallback": "",
+                "melPostJobCallback": "",
+                "pythonPerFrameCallback": "",
+                "pythonPostJobCallback": "",
+                "overrides": [
+                    "attr",
+                    "attrPrefix",
+                    "renderableOnly",
+                    "visibleOnly",
+                    "worldSpace",
+                    "writeColorSets",
+                    "writeFaceSets",
+                    "writeNormals"
+                ]
             }
         },
         "load": {
@@ -2931,8 +4760,70 @@
                 "display_handle": true
             },
             "import_loader": {
+                "enabled": true,
                 "namespace": "{folder[name]}_{product[name]}_##_",
                 "group_name": "_GRP"
+            },
+            "ArnoldStandinLoader": {
+                "enabled": true
+            },
+            "AssemblyLoader": {
+                "enabled": true
+            },
+            "AudioLoader": {
+                "enabled": true
+            },
+            "GpuCacheLoader": {
+                "enabled": true
+            },
+            "FileNodeLoader": {
+                "enabled": true
+            },
+            "ImagePlaneLoader": {
+                "enabled": true
+            },
+            "LookLoader": {
+                "enabled": true
+            },
+            "MatchmoveLoader": {
+                "enabled": true
+            },
+            "MultiverseUsdLoader": {
+                "enabled": true
+            },
+            "MultiverseUsdOverLoader": {
+                "enabled": true
+            },
+            "RedshiftProxyLoader": {
+                "enabled": true
+            },
+            "RenderSetupLoader": {
+                "enabled": true
+            },
+            "LoadVDBtoArnold": {
+                "enabled": true
+            },
+            "LoadVDBtoRedShift": {
+                "enabled": true
+            },
+            "LoadVDBtoVRay": {
+                "enabled": true
+            },
+            "VRayProxyLoader": {
+                "enabled": true
+            },
+            "VRaySceneLoader": {
+                "enabled": true
+            },
+            "XgenLoader": {
+                "enabled": true
+            },
+            "YetiCacheLoader": {
+                "enabled": true
+            },
+            "YetiRigLoader": {
+                "enabled": true,
+                "create_cache_instance_on_load": true
             }
         },
         "workfile_build": {
@@ -3051,16 +4942,23 @@
                 "rules": []
             },
             "viewer": {
-                "viewerProcess": "sRGB (default)"
+                "viewerProcess": "ACES/sRGB",
+                "output_transform": "ACES/sRGB"
             },
             "baking": {
-                "viewerProcess": "rec709 (default)"
+                "viewerProcess": "ACES/Rec.709",
+                "output_transform": "ACES/Rec.709"
             },
             "workfile": {
                 "color_management": "OCIO",
-                "native_ocio_config": "nuke-default",
-                "working_space": "scene_linear",
-                "thumbnail_space": "sRGB (default)"
+                "native_ocio_config": "aces_1.2",
+                "working_space": "role_scene_linear",
+                "monitor_lut": "ACES/sRGB",
+                "monitor_out_lut": "ACES/sRGB",
+                "int_8_lut": "role_matte_paint",
+                "int_16_lut": "role_texture_paint",
+                "log_lut": "role_compositing_log",
+                "float_lut": "role_scene_linear"
             },
             "nodes": {
                 "required_nodes": [
@@ -4784,6 +6682,886 @@
         },
         "templated_workfile_build": {
             "profiles": []
+        }
+    },
+    "ayon_ocio": {},
+    "photoshop": {
+        "imageio": {
+            "activate_host_color_management": true,
+            "remapping": {
+                "rules": []
+            },
+            "ocio_config": {
+                "override_global_config": false,
+                "filepath": []
+            },
+            "file_rules": {
+                "activate_host_rules": false,
+                "rules": []
+            }
+        },
+        "create": {
+            "ImageCreator": {
+                "enabled": true,
+                "active_on_create": true,
+                "mark_for_review": false,
+                "default_variants": [
+                    "Main"
+                ]
+            },
+            "AutoImageCreator": {
+                "enabled": false,
+                "active_on_create": true,
+                "mark_for_review": false,
+                "default_variant": ""
+            },
+            "ReviewCreator": {
+                "enabled": true,
+                "active_on_create": true,
+                "default_variant": ""
+            },
+            "WorkfileCreator": {
+                "enabled": true,
+                "active_on_create": true,
+                "default_variant": "Main"
+            }
+        },
+        "publish": {
+            "CollectColorCodedInstances": {
+                "enabled": true,
+                "create_flatten_image": "no",
+                "flatten_product_name_template": "",
+                "color_code_mapping": []
+            },
+            "CollectReview": {
+                "enabled": true
+            },
+            "CollectVersion": {
+                "enabled": false
+            },
+            "ValidateContainers": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            },
+            "ValidateNaming": {
+                "invalid_chars": "[ \\\\/+\\*\\?\\(\\)\\[\\]\\{\\}:,;]",
+                "replace_char": "_"
+            },
+            "ExtractImage": {
+                "formats": [
+                    "png",
+                    "jpg"
+                ]
+            },
+            "ExtractReview": {
+                "make_image_sequence": false,
+                "max_downscale_size": 8192,
+                "jpg_options": {
+                    "tags": [
+                        "review",
+                        "ftrackreview"
+                    ]
+                },
+                "mov_options": {
+                    "tags": [
+                        "review",
+                        "ftrackreview"
+                    ]
+                }
+            }
+        },
+        "workfile_builder": {
+            "create_first_version": false,
+            "custom_templates": []
+        }
+    },
+    "royalrender": {
+        "enabled": false,
+        "rr_paths": [
+            {
+                "name": "default",
+                "value": {
+                    "windows": "",
+                    "linux": "",
+                    "darwin": ""
+                }
+            }
+        ],
+        "selected_rr_paths": [
+            "default"
+        ],
+        "publish": {
+            "CollectSequencesFromJob": {
+                "review": true
+            }
+        }
+    },
+    "sitesync": {
+        "enabled": false,
+        "config": {
+            "retry_cnt": 3,
+            "loop_delay": 60,
+            "always_accessible_on": [],
+            "active_site": "studio",
+            "remote_site": "studio"
+        },
+        "local_setting": {
+            "active_site": "",
+            "remote_site": "",
+            "local_roots": [
+                {
+                    "name": "work",
+                    "path": "C:/projects_local"
+                }
+            ]
+        },
+        "sites": []
+    },
+    "slack": {
+        "enabled": true,
+        "token": "",
+        "publish": {
+            "CollectSlackFamilies": {
+                "enabled": true,
+                "optional": true,
+                "profiles": [
+                    {
+                        "product_types": [],
+                        "hosts": [],
+                        "task_types": [],
+                        "task_names": [],
+                        "product_names": [],
+                        "review_upload_limit": 50.0,
+                        "channel_messages": []
+                    }
+                ]
+            }
+        }
+    },
+    "substancepainter": {
+        "imageio": {
+            "activate_host_color_management": true,
+            "ocio_config": {
+                "override_global_config": false,
+                "filepath": []
+            },
+            "file_rules": {
+                "activate_host_rules": false,
+                "rules": []
+            }
+        },
+        "shelves": [],
+        "load": {
+            "SubstanceLoadProjectMesh": {
+                "project_templates": [
+                    {
+                        "name": "2K(Default)",
+                        "default_texture_resolution": 2048,
+                        "import_cameras": true,
+                        "normal_map_format": "NormalMapFormat.DirectX",
+                        "project_workflow": "ProjectWorkflow.Default",
+                        "tangent_space_mode": "TangentSpace.PerFragment",
+                        "preserve_strokes": true
+                    },
+                    {
+                        "name": "2K(UV tile)",
+                        "default_texture_resolution": 2048,
+                        "import_cameras": true,
+                        "normal_map_format": "NormalMapFormat.DirectX",
+                        "project_workflow": "ProjectWorkflow.UVTile",
+                        "tangent_space_mode": "TangentSpace.PerFragment",
+                        "preserve_strokes": true
+                    },
+                    {
+                        "name": "4K(Custom)",
+                        "default_texture_resolution": 4096,
+                        "import_cameras": true,
+                        "normal_map_format": "NormalMapFormat.OpenGL",
+                        "project_workflow": "ProjectWorkflow.UVTile",
+                        "tangent_space_mode": "TangentSpace.PerFragment",
+                        "preserve_strokes": true
+                    }
+                ]
+            }
+        }
+    },
+    "timers_manager": {
+        "auto_stop": true,
+        "full_time": 15,
+        "message_time": 0.5,
+        "disregard_publishing": false
+    },
+    "traypublisher": {
+        "imageio": {
+            "activate_host_color_management": true,
+            "ocio_config": {
+                "override_global_config": false,
+                "filepath": []
+            },
+            "file_rules": {
+                "activate_host_rules": false,
+                "rules": []
+            }
+        },
+        "simple_creators": [
+            {
+                "product_type": "workfile",
+                "identifier": "",
+                "label": "Workfile",
+                "icon": "fa.file",
+                "default_variants": [
+                    "Main"
+                ],
+                "description": "Backup of a working scene",
+                "detailed_description": "Workfiles are full scenes from any application that are directly edited by artists. They represent a state of work on a task at a given point and are usually not directly referenced into other scenes.",
+                "allow_sequences": false,
+                "allow_multiple_items": false,
+                "allow_version_control": false,
+                "extensions": [
+                    ".ma",
+                    ".mb",
+                    ".nk",
+                    ".hrox",
+                    ".hip",
+                    ".hiplc",
+                    ".hipnc",
+                    ".blend",
+                    ".scn",
+                    ".tvpp",
+                    ".comp",
+                    ".zip",
+                    ".prproj",
+                    ".drp",
+                    ".psd",
+                    ".psb",
+                    ".aep"
+                ]
+            },
+            {
+                "product_type": "model",
+                "identifier": "",
+                "label": "Model",
+                "icon": "fa.cubes",
+                "default_variants": [
+                    "Main",
+                    "Proxy",
+                    "Sculpt"
+                ],
+                "description": "Clean models",
+                "detailed_description": "Models should only contain geometry data, without any extras like cameras, locators or bones.\n\nKeep in mind that models published from tray publisher are not validated for correctness. ",
+                "allow_sequences": false,
+                "allow_multiple_items": true,
+                "allow_version_control": false,
+                "extensions": [
+                    ".ma",
+                    ".mb",
+                    ".obj",
+                    ".abc",
+                    ".fbx",
+                    ".bgeo",
+                    ".bgeogz",
+                    ".bgeosc",
+                    ".usd",
+                    ".blend"
+                ]
+            },
+            {
+                "product_type": "pointcache",
+                "identifier": "",
+                "label": "Pointcache",
+                "icon": "fa.gears",
+                "default_variants": [
+                    "Main"
+                ],
+                "description": "Geometry Caches",
+                "detailed_description": "Alembic or bgeo cache of animated data",
+                "allow_sequences": true,
+                "allow_multiple_items": true,
+                "allow_version_control": false,
+                "extensions": [
+                    ".abc",
+                    ".bgeo",
+                    ".bgeogz",
+                    ".bgeosc"
+                ]
+            },
+            {
+                "product_type": "plate",
+                "identifier": "",
+                "label": "Plate",
+                "icon": "mdi.camera-image",
+                "default_variants": [
+                    "Main",
+                    "BG",
+                    "Animatic",
+                    "Reference",
+                    "Offline"
+                ],
+                "description": "Footage Plates",
+                "detailed_description": "Any type of image seqeuence coming from outside of the studio. Usually camera footage, but could also be animatics used for reference.",
+                "allow_sequences": true,
+                "allow_multiple_items": true,
+                "allow_version_control": false,
+                "extensions": [
+                    ".exr",
+                    ".png",
+                    ".dng",
+                    ".dpx",
+                    ".jpg",
+                    ".tiff",
+                    ".tif",
+                    ".mov",
+                    ".mp4",
+                    ".avi"
+                ]
+            },
+            {
+                "product_type": "render",
+                "identifier": "",
+                "label": "Render",
+                "icon": "mdi.folder-multiple-image",
+                "default_variants": [],
+                "description": "Rendered images or video",
+                "detailed_description": "Sequence or single file renders",
+                "allow_sequences": true,
+                "allow_multiple_items": true,
+                "allow_version_control": false,
+                "extensions": [
+                    ".exr",
+                    ".png",
+                    ".dng",
+                    ".dpx",
+                    ".jpg",
+                    ".jpeg",
+                    ".tiff",
+                    ".tif",
+                    ".mov",
+                    ".mp4",
+                    ".avi"
+                ]
+            },
+            {
+                "product_type": "camera",
+                "identifier": "",
+                "label": "Camera",
+                "icon": "fa.video-camera",
+                "default_variants": [],
+                "description": "3d Camera",
+                "detailed_description": "Ideally this should be only camera itself with baked animation, however, it can technically also include helper geometry.",
+                "allow_sequences": false,
+                "allow_multiple_items": true,
+                "allow_version_control": false,
+                "extensions": [
+                    ".abc",
+                    ".ma",
+                    ".hip",
+                    ".blend",
+                    ".fbx",
+                    ".usd"
+                ]
+            },
+            {
+                "product_type": "image",
+                "identifier": "",
+                "label": "Image",
+                "icon": "fa.image",
+                "default_variants": [
+                    "Reference",
+                    "Texture",
+                    "Concept",
+                    "Background"
+                ],
+                "description": "Single image",
+                "detailed_description": "Any image data can be published as image product type. References, textures, concept art, matte paints. This is a fallback 2d product type for everything that doesn't fit more specific product type.",
+                "allow_sequences": false,
+                "allow_multiple_items": true,
+                "allow_version_control": false,
+                "extensions": [
+                    ".exr",
+                    ".jpg",
+                    ".jpeg",
+                    ".dng",
+                    ".dpx",
+                    ".bmp",
+                    ".tif",
+                    ".tiff",
+                    ".png",
+                    ".psb",
+                    ".psd"
+                ]
+            },
+            {
+                "product_type": "vdb",
+                "identifier": "",
+                "label": "VDB Volumes",
+                "icon": "fa.cloud",
+                "default_variants": [],
+                "description": "Sparse volumetric data",
+                "detailed_description": "Hierarchical data structure for the efficient storage and manipulation of sparse volumetric data discretized on three-dimensional grids",
+                "allow_sequences": true,
+                "allow_multiple_items": true,
+                "allow_version_control": false,
+                "extensions": [
+                    ".vdb"
+                ]
+            },
+            {
+                "product_type": "matchmove",
+                "identifier": "",
+                "label": "Matchmove",
+                "icon": "fa.empire",
+                "default_variants": [
+                    "Camera",
+                    "Object",
+                    "Mocap"
+                ],
+                "description": "Matchmoving script",
+                "detailed_description": "Script exported from matchmoving application to be later processed into a tracked camera with additional data",
+                "allow_sequences": false,
+                "allow_multiple_items": true,
+                "allow_version_control": false,
+                "extensions": []
+            },
+            {
+                "product_type": "rig",
+                "identifier": "",
+                "label": "Rig",
+                "icon": "fa.wheelchair",
+                "default_variants": [],
+                "description": "CG rig file",
+                "detailed_description": "CG rigged character or prop. Rig should be clean of any extra data and directly loadable into it's respective application\t",
+                "allow_sequences": false,
+                "allow_multiple_items": false,
+                "allow_version_control": false,
+                "extensions": [
+                    ".ma",
+                    ".blend",
+                    ".hip",
+                    ".hda"
+                ]
+            },
+            {
+                "product_type": "simpleUnrealTexture",
+                "identifier": "",
+                "label": "Simple UE texture",
+                "icon": "fa.image",
+                "default_variants": [],
+                "description": "Simple Unreal Engine texture",
+                "detailed_description": "Texture files with Unreal Engine naming conventions",
+                "allow_sequences": false,
+                "allow_multiple_items": true,
+                "allow_version_control": false,
+                "extensions": []
+            },
+            {
+                "product_type": "audio",
+                "identifier": "",
+                "label": "Audio ",
+                "icon": "fa5s.file-audio",
+                "default_variants": [
+                    "Main"
+                ],
+                "description": "Audio product",
+                "detailed_description": "Audio files for review or final delivery",
+                "allow_sequences": false,
+                "allow_multiple_items": false,
+                "allow_version_control": false,
+                "extensions": [
+                    ".wav"
+                ]
+            }
+        ],
+        "editorial_creators": {
+            "editorial_simple": {
+                "default_variants": [
+                    "Main"
+                ],
+                "clip_name_tokenizer": [
+                    {
+                        "name": "_sequence_",
+                        "regex": "(sc\\d{3})"
+                    },
+                    {
+                        "name": "_shot_",
+                        "regex": "(sh\\d{3})"
+                    }
+                ],
+                "shot_rename": {
+                    "enabled": true,
+                    "shot_rename_template": "{project[code]}_{_sequence_}_{_shot_}"
+                },
+                "shot_hierarchy": {
+                    "enabled": true,
+                    "parents_path": "{project}/{folder}/{sequence}",
+                    "parents": [
+                        {
+                            "parent_type": "Project",
+                            "name": "project",
+                            "value": "{project[name]}"
+                        },
+                        {
+                            "parent_type": "Folder",
+                            "name": "folder",
+                            "value": "shots"
+                        },
+                        {
+                            "parent_type": "Sequence",
+                            "name": "sequence",
+                            "value": "{_sequence_}"
+                        }
+                    ]
+                },
+                "shot_add_tasks": [],
+                "product_type_presets": [
+                    {
+                        "product_type": "review",
+                        "variant": "Reference",
+                        "review": true,
+                        "output_file_type": ".mp4"
+                    },
+                    {
+                        "product_type": "plate",
+                        "variant": "",
+                        "review": false,
+                        "output_file_type": ".mov"
+                    },
+                    {
+                        "product_type": "audio",
+                        "variant": "",
+                        "review": false,
+                        "output_file_type": ".wav"
+                    }
+                ]
+            }
+        },
+        "create": {
+            "BatchMovieCreator": {
+                "default_variants": [
+                    "Main"
+                ],
+                "default_tasks": [
+                    "Compositing"
+                ],
+                "extensions": [
+                    ".mov"
+                ]
+            },
+            "IngestCSV": {
+                "enabled": true,
+                "columns_config": {
+                    "csv_delimiter": ",",
+                    "columns": [
+                        {
+                            "name": "File Path",
+                            "type": "text",
+                            "default": "",
+                            "required_column": true,
+                            "validation_pattern": "^([a-z0-9#._\\/]*)$"
+                        },
+                        {
+                            "name": "Folder Path",
+                            "type": "text",
+                            "default": "",
+                            "required_column": true,
+                            "validation_pattern": "^([a-zA-Z0-9_\\/]*)$"
+                        },
+                        {
+                            "name": "Task Name",
+                            "type": "text",
+                            "default": "",
+                            "required_column": true,
+                            "validation_pattern": "^(.*)$"
+                        },
+                        {
+                            "name": "Product Type",
+                            "type": "text",
+                            "default": "",
+                            "required_column": false,
+                            "validation_pattern": "^(.*)$"
+                        },
+                        {
+                            "name": "Variant",
+                            "type": "text",
+                            "default": "",
+                            "required_column": false,
+                            "validation_pattern": "^(.*)$"
+                        },
+                        {
+                            "name": "Version",
+                            "type": "number",
+                            "default": "1",
+                            "required_column": true,
+                            "validation_pattern": "^(\\d{1,3})$"
+                        },
+                        {
+                            "name": "Version Comment",
+                            "type": "text",
+                            "default": "",
+                            "required_column": false,
+                            "validation_pattern": "^(.*)$"
+                        },
+                        {
+                            "name": "Version Thumbnail",
+                            "type": "text",
+                            "default": "",
+                            "required_column": false,
+                            "validation_pattern": "^([a-zA-Z0-9#._\\/]*)$"
+                        },
+                        {
+                            "name": "Frame Start",
+                            "type": "number",
+                            "default": "0",
+                            "required_column": true,
+                            "validation_pattern": "^(\\d{1,8})$"
+                        },
+                        {
+                            "name": "Frame End",
+                            "type": "number",
+                            "default": "0",
+                            "required_column": true,
+                            "validation_pattern": "^(\\d{1,8})$"
+                        },
+                        {
+                            "name": "Handle Start",
+                            "type": "number",
+                            "default": "0",
+                            "required_column": true,
+                            "validation_pattern": "^(\\d)$"
+                        },
+                        {
+                            "name": "Handle End",
+                            "type": "number",
+                            "default": "0",
+                            "required_column": true,
+                            "validation_pattern": "^(\\d)$"
+                        },
+                        {
+                            "name": "FPS",
+                            "type": "decimal",
+                            "default": "0.0",
+                            "required_column": true,
+                            "validation_pattern": "^[0-9]*\\.[0-9]+$|^[0-9]+$"
+                        },
+                        {
+                            "name": "Slate Exists",
+                            "type": "bool",
+                            "default": "True",
+                            "required_column": false,
+                            "validation_pattern": "(True|False)"
+                        },
+                        {
+                            "name": "Representation",
+                            "type": "text",
+                            "default": "",
+                            "required_column": false,
+                            "validation_pattern": "^(.*)$"
+                        },
+                        {
+                            "name": "Representation Colorspace",
+                            "type": "text",
+                            "default": "",
+                            "required_column": false,
+                            "validation_pattern": "^(.*)$"
+                        },
+                        {
+                            "name": "Representation Tags",
+                            "type": "text",
+                            "default": "",
+                            "required_column": false,
+                            "validation_pattern": "^(.*)$"
+                        }
+                    ]
+                },
+                "representations_config": {
+                    "tags_delimiter": ";",
+                    "default_tags": [
+                        "review"
+                    ],
+                    "representations": [
+                        {
+                            "name": "preview",
+                            "extensions": [
+                                ".mp4",
+                                ".mov"
+                            ]
+                        },
+                        {
+                            "name": "exr",
+                            "extensions": [
+                                ".exr"
+                            ]
+                        },
+                        {
+                            "name": "edit",
+                            "extensions": [
+                                ".mov"
+                            ]
+                        },
+                        {
+                            "name": "review",
+                            "extensions": [
+                                ".mov"
+                            ]
+                        },
+                        {
+                            "name": "nuke",
+                            "extensions": [
+                                ".nk"
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "publish": {
+            "CollectFrameDataFromAssetEntity": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            },
+            "ValidateFrameRange": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            },
+            "ValidateExistingVersion": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            }
+        }
+    },
+    "tvpaint": {
+        "imageio": {
+            "activate_host_color_management": true,
+            "ocio_config": {
+                "override_global_config": false,
+                "filepath": []
+            },
+            "file_rules": {
+                "activate_host_rules": false,
+                "rules": []
+            }
+        },
+        "stop_timer_on_application_exit": false,
+        "create": {
+            "create_workfile": {
+                "enabled": true,
+                "default_variant": "Main",
+                "default_variants": []
+            },
+            "create_review": {
+                "enabled": true,
+                "active_on_create": true,
+                "default_variant": "Main",
+                "default_variants": []
+            },
+            "create_render_scene": {
+                "enabled": true,
+                "active_on_create": false,
+                "mark_for_review": true,
+                "default_pass_name": "beauty",
+                "default_variant": "Main",
+                "default_variants": []
+            },
+            "create_render_layer": {
+                "mark_for_review": false,
+                "default_pass_name": "beauty",
+                "default_variant": "Main",
+                "default_variants": []
+            },
+            "create_render_pass": {
+                "mark_for_review": false,
+                "default_variant": "Main",
+                "default_variants": []
+            },
+            "auto_detect_render": {
+                "enabled": false,
+                "allow_group_rename": true,
+                "group_name_template": "L{group_index}",
+                "group_idx_offset": 10,
+                "group_idx_padding": 3
+            }
+        },
+        "publish": {
+            "CollectRenderInstances": {
+                "ignore_render_pass_transparency": false
+            },
+            "ExtractSequence": {
+                "review_bg": [
+                    255,
+                    255,
+                    255,
+                    1.0
+                ]
+            },
+            "ValidateProjectSettings": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            },
+            "ValidateMarks": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            },
+            "ValidateStartFrame": {
+                "enabled": false,
+                "optional": true,
+                "active": true
+            },
+            "ValidateAssetName": {
+                "enabled": true,
+                "optional": true,
+                "active": true
+            },
+            "ExtractConvertToEXR": {
+                "enabled": false,
+                "replace_pngs": true,
+                "exr_compression": "ZIP"
+            }
+        },
+        "load": {
+            "LoadImage": {
+                "defaults": {
+                    "stretch": true,
+                    "timestretch": true,
+                    "preload": true
+                }
+            },
+            "ImportImage": {
+                "defaults": {
+                    "stretch": true,
+                    "timestretch": true,
+                    "preload": true
+                }
+            }
+        },
+        "workfile_builder": {
+            "create_first_version": false,
+            "custom_templates": []
+        }
+    },
+    "unreal": {
+        "imageio": {
+            "activate_host_color_management": true,
+            "ocio_config": {
+                "override_global_config": false,
+                "filepath": []
+            },
+            "file_rules": {
+                "activate_host_rules": false,
+                "rules": []
+            }
+        },
+        "level_sequences_for_layouts": true,
+        "delete_unmatched_assets": false,
+        "render_config_path": "",
+        "preroll_frames": 0,
+        "render_format": "exr",
+        "project_setup": {
+            "dev_mode": false
         }
     }
 }
