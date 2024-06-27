@@ -15,7 +15,7 @@
                 "type": "float",
                 "title": "FPS",
                 "description": "Frame rate",
-                "example": 25,
+                "example":60,
                 "default": 25,
                 "gt": 0,
                 "ge": null,
